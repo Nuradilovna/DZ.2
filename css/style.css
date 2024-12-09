@@ -2,7 +2,7 @@
 
 .header {
     height: 80px;
-    background: #2c2d2f;
+    background: black;
     display: flex;
     align-items: center;
     width: 100%;
@@ -17,21 +17,52 @@
     align-items: center;
     justify-content: space-between;
 }
+.logotype img {
+    height: 170px;
+    width: 300px;
+}
+.bender_earth{
+    background-color: #ffffff;
+    height: 85px;
+    width: 85px;
+}
+.bender_air{
+    background-color: #ffffff;
+    height: 85px;
+    width: 85px;
+}
+.bender_water{
+    background-color: #ffffff;
+    height: 85px;
+    width: 85px;
+}
+.bender_fire{
+    background-color: #ffffff;
+    height: 85px;
+    width: 85px;
+}
+.bender_earth:hover{
+    background-color: lawngreen;
+}
+.bender_fire:hover{
+    background-color: red;
+}
+.bender_air:hover{
+    background-color: orange;
+}
+.bender_water:hover{
+    background-color: blue;
+}
 
 /* LOGOTYPE */
 
 .logotype {
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 22px;
     height: 60px;
-    width: fit-content;
-    background: var(--orange);
-    padding: 8px;
     color: white;
-    border-radius: 5px;
     cursor: pointer;
+    overflow: hidden;
 }
 
 /* HEADER MENU */
@@ -55,8 +86,13 @@
 
 .main_block {
     padding: 100px 0;
-    background: black;
+    background-image: url(../../img_project/2start.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 900px;
+    width: 100%;
 }
+
 
 /* BUTTONS COLOR PICKER */
 
