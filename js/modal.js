@@ -9,6 +9,7 @@ const closeModal =()=>{
     modal.style.display = 'none';
     document.body.style.overflow = '';
 }
+
 modalTrigger.onclick = openModal;
 modalCloseButton.onclick= closeModal
 modal.onclick=(event) => {

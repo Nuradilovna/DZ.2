@@ -101,7 +101,7 @@ const stopTimer = () => {
     clearInterval(intervalId)
     Run = false
 }
-
+document.querySelector('#stop').addEventListener('click', stopTimer)
 
 const resetTimer = () => {
     clearInterval(intervalId)

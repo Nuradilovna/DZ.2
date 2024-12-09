@@ -42,6 +42,7 @@ tabsParent.onclick=(e)=>{
                 showTabContent(index);
             }
         })
+
     }
 }
 
