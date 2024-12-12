@@ -20,6 +20,7 @@ const onScroll = () => {
     }
 }
 
+
 modalTrigger.onclick = openModal;
 modalCloseButton.onclick= closeModal
 modal.onclick = (event) => {
