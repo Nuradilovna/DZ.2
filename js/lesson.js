@@ -16,9 +16,13 @@ phoneButton.onclick=()=>{
     }
 }
 
+//Tab slider
 const tabContentBlocks = document.querySelectorAll(".tab_content_block");
 const tabs=document.querySelectorAll(".tab_content_item");
 const tabsParent=document.querySelector(".tab_content_items")
+let index = 0
+let interval
+
 const hideTabContent=()=>{
     tabContentBlocks.forEach(item=>{
         item.style.display="none";
@@ -34,15 +38,28 @@ const showTabContent=(index=0)=>{
 hideTabContent();
 showTabContent();
 
+const autoTabs = () => {
+    interval = setInterval(() => {
+        hideTabContent();
+        index ++ >= tabs.length ? index = 0 : index = index ++;
+        showTabContent(index);
+    }, 1000);
+};
+autoTabs();
+
 tabsParent.onclick=(e)=>{
     if (e.target.classList.contains('tab_content_item')) {
-        tabs.forEach((item,index)=>{
+        tabs.forEach((item,newIndex)=>{
             if (e.target===item){
+                clearInterval(interval);
+                index = newIndex;
                 hideTabContent();
                 showTabContent(index);
+                autoTabs();
             }
         })
 
     }
 }
+
 
