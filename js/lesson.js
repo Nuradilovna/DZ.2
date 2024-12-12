@@ -45,7 +45,9 @@ const autoTabs = () => {
         showTabContent(index);
     }, 1000);
 };
+
 autoTabs();
+
 
 tabsParent.onclick=(e)=>{
     if (e.target.classList.contains('tab_content_item')) {
