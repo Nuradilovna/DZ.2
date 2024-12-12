@@ -28,7 +28,6 @@ modal.onclick = (event) => {
     }
 }
 
-
 setTimeout(openModal, 10000);
 
 window.addEventListener('scroll', onScroll);
