@@ -31,7 +31,7 @@ const hideTabContent=()=>{
         item.classList.remove("tab_content_item_active");
     })
 }
-const showTabContent=(index=0)=>{
+const showTabContent=(index= 0)=>{
     tabContentBlocks[index].style.display="block";
     tabs[index].classList.add("tab_content_item_active");
 }
@@ -43,7 +43,7 @@ const autoTabs = () => {
         hideTabContent();
         index ++ >= tabs.length ? index = 0 : index = index ++;
         showTabContent(index);
-    }, 1000);
+    }, 5000);
 };
 
 autoTabs();

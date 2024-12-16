@@ -111,4 +111,56 @@ const resetTimer = () => {
 }
 document.querySelector('#reset').addEventListener('click', resetTimer)
 
+//character-card
 
+const request = new XMLHttpRequest();
+request.open('GET', '../data/persons.json');
+request.setRequestHeader('Content-type', 'application/json');
+request.send();
+
+request.onload = () => {
+    const data = JSON.parse(request.response);
+
+    const characterList = document.querySelector('.characters-list');
+
+    data.forEach(character => {
+        const card = document.createElement('div');
+        card.classList.add('character-card');
+
+        const photoDiv = document.createElement('div');
+        photoDiv.classList.add('character-photo');
+        const img = document.createElement('img');
+        img.src = character.photo;
+        photoDiv.appendChild(img);
+
+        const name = document.createElement('h3');
+        name.textContent = character.name;
+
+        const element = document.createElement('p');
+        element.classList.add('element');
+        element.textContent = `Element: ${character.element}`;
+
+        const age = document.createElement('p');
+        age.classList.add('age');
+        age.textContent = `Age: ${character.age}`;
+
+        card.appendChild(photoDiv);
+        card.appendChild(name);
+        card.appendChild(element);
+        card.appendChild(age);
+
+        characterList.appendChild(card);
+    });
+};
+
+//uber mich
+
+const request_2 = new XMLHttpRequest();
+request_2.open('GET','../data/any.json')
+request_2.setRequestHeader('Content-type','application/json')
+request_2.send()
+
+request_2.onload = ()=> {
+    const any = JSON.parse(request_2.response)
+    console.log(any)
+}

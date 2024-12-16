@@ -1,7 +1,7 @@
 const modal = document.querySelector('.modal');
 const modalTrigger = document.querySelector('#btn-get');
 const modalCloseButton = document.querySelector('.modal_close');
-let scrollEvent = false;
+// let scrollEvent = false;
 
 const openModal = () => {
     modal.style.display = 'block';
@@ -12,11 +12,19 @@ const closeModal =()=>{
     document.body.style.overflow = '';
 }
 
-const onScroll = () => {
-    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight && !scrollEvent) {
+// const onScroll = () => {
+//     if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight && !scrollEvent) {
+//         openModal();
+//         scrollEvent = true;
+//         window.removeEventListener('scroll', onScroll);
+//     }
+// }
+
+const onScroll =() => {
+    const scroll = window.innerHeight +window.scrollY
+    if (scroll >= document.body.offsetHeight - 1) {
         openModal();
-        scrollEvent = true;
-        window.removeEventListener('scroll', onScroll);
+        removeEventListener("scroll", onScroll);
     }
 }
 
@@ -29,6 +37,6 @@ modal.onclick = (event) => {
     }
 }
 
-setTimeout(openModal, 10000);
+// setTimeout(openModal, 10000);
 
 window.addEventListener('scroll', onScroll);

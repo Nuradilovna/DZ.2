@@ -1,0 +1,15 @@
+{
+  "name" : "Nurperi",
+  "age" : 18,
+  "color" : "darkgreen",
+  "familyPersons": {
+    "mom" : ["Baktygul" , 40],
+    "olderSister" : ["Gulzar" , 24],
+    "nextSister" : ["Jibek" , 21]
+  },
+  "adress" : {
+    "town" : "Kara-Kul",
+    "street" : "serogo",
+    "home" : 18
+  }
+}

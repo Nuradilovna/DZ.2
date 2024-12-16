@@ -49,16 +49,10 @@
     background-color: red;
 }
 .bender_air:hover{
-    background-color: powderblue;
+    background-color: orange;
 }
 .bender_water:hover{
     background-color: blue;
-}
-.inner_header a {
-    width: 165px;
-    height: 100%;
-    color: white;
-
 }
 
 /* LOGOTYPE */
@@ -80,6 +74,14 @@
     width: 600px;
 }
 
+.menu_link a {
+    color: var(--orange);
+    text-transform: uppercase;
+}
+
+.menu_link a:hover {
+    text-decoration: underline;
+}
 
 /* MAIN BLOCK */
 
@@ -97,15 +99,11 @@
 
 .colors-buttons {
     display: flex;
-    margin-top: 50px;
-    flex-wrap: wrap;
-    align-items: center;
     justify-content: space-between;
-    gap:  0 400px;
+    margin-top: 50px;
 }
 
 .btn-color {
-    margin: 46px;
     border-radius: 20px;
     border-color: white !important;
 }

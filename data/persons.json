@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Aang",
+    "photo": "https://i.pinimg.com/736x/75/3f/e1/753fe1e5853fa966035158b56458292d.jpg",
+    "element": "avatar",
+    "age": 112
+  },
+  {
+    "name": "Katara",
+    "photo": "https://i.pinimg.com/736x/86/60/90/86609021eee6b9b02e810027413d1eca.jpg",
+    "element": "water",
+    "age": 16
+  },
+  {
+    "name": "Sokka",
+    "photo": "https://i.pinimg.com/736x/ea/f1/71/eaf1716c286b179c7a50b2f4b3b28d7c.jpg",
+    "element": "human",
+    "age": 16
+  },
+  {
+    "name": "Zuko",
+    "photo": "https://i.pinimg.com/736x/f3/ac/60/f3ac60495d1922cc97723975473b7c8d.jpg",
+    "element": "fire",
+    "age": 16
+  },
+  {
+    "name": "Toph",
+    "photo": "https://i.pinimg.com/736x/c4/bd/62/c4bd62f03f2db1b6d5733b405ac48314.jpg",
+    "element": "earth",
+    "age": 12
+  },
+  {
+    "name": "Bumi",
+    "photo": "https://i.pinimg.com/736x/da/a8/6f/daa86ff97a639b0e834c82cbc2972bf7.jpg",
+    "element": "earth",
+    "age": 112
+  },
+  {
+    "name": "Appa",
+    "photo": "https://i.pinimg.com/736x/8a/be/08/8abe08326bd4a70d15dda89b91e574e6.jpg",
+    "element": "animals",
+    "age": 110
+  },
+  {
+    "name": "Momo",
+    "photo": "https://i.pinimg.com/736x/17/d4/06/17d406caafb2e76bf0033dd72a5504d1.jpg",
+    "element": "animals",
+    "age": 6
+  }
+]
