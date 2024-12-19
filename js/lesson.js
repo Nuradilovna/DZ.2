@@ -98,9 +98,7 @@ const converter = (element, targetElement) => {
             }
 
             if (element.value === "") {
-                somInput.value = "";
-                usdInput.value = "";
-                eurInput.value = "";
+                somInput.value = usdInput.value = eurInput.value = ""
             }
         };
     };
