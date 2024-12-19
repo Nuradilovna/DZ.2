@@ -145,6 +145,10 @@
     flex-direction: column;
 }
 
+.inner_converter input {
+    color: white;
+}
+
 /*------WEATHER------*/
 
 .weather {
