@@ -1,33 +1,31 @@
-// RANDOM COLOR GENERATOR
 
-const buttonsColor = document.querySelectorAll('.btn-color')
-const javaScript = document.querySelector('#js-color')
-
-const generateRandomColor = () => {
-    const hexCodes = '0123456789ABCDEF'
-    let color = ''
-    for (let i = 0; i < 6; i++) {
-        color += hexCodes[Math.floor(Math.random() * hexCodes.length)]
+//MAIN BUTTONS TO CHARACTERS
+document.addEventListener('DOMContentLoaded', function() {
+    function showButton(button, delay) {
+        setTimeout(() => {
+            button.style.opacity = 1;
+        }, delay);
     }
-    return '#' + color
-}
+    const delays = [74000, 110000, 1000, 37000];
 
-const setRandomColors = () => {
-    buttonsColor.forEach((buttonColor) => {
-        buttonColor.innerHTML = generateRandomColor()
-        buttonColor.onclick = (event) => {
-            javaScript.style.color = event.target.innerHTML
-        }
-    })
-}
+    function startShowingButtons() {
+        const buttons = document.querySelectorAll('.btn-main');
 
-window.onload = () => setRandomColors()
-window.onkeydown = (event) => {
-    if (event.code.toLowerCase() === 'space') {
-        event.preventDefault()
-        setRandomColors()
+        buttons.forEach((button, index) => {
+            button.style.opacity = 0;
+            showButton(button, delays[index]);
+        });
     }
-}
+    startShowingButtons();
+
+    setTimeout(() => {
+        startShowingButtons();
+    }, 160000);
+
+});
+
+
+
 
 // SLIDER BLOCK
 

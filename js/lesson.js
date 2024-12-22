@@ -16,7 +16,7 @@ phoneButton.onclick=()=>{
     }
 }
 
-//Tab slider
+// Tab slider
 const tabContentBlocks = document.querySelectorAll(".tab_content_block");
 const tabs=document.querySelectorAll(".tab_content_item");
 const tabsParent=document.querySelector(".tab_content_items")
@@ -103,12 +103,50 @@ const converter = (element, targetElement) => {
         };
     };
 };
-
 converter(somInput, usdInput);
 converter(usdInput, somInput);
 converter(usdInput, eurInput);
 converter(eurInput, somInput);
 converter(eurInput, usdInput);
+
+
+//CARD SWITCHER
+const cardBlock = document.querySelector('.card');
+const btnNext = document.querySelector('#btn-next');
+const btnPrev = document.querySelector('#btn-prev');
+
+let cardId = 1;
+
+function loadCard(id) {
+    fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
+        .then((response) => response.json())
+        .then((data) => {
+            const { title, completed, id } = data;
+            cardBlock.innerHTML = `
+                <p>${title}</p>
+                <p>${completed}</p>
+                <span>${id}</span>
+            `;
+        });
+}
+
+loadCard(cardId);
+
+btnNext.onclick = () => {
+    cardId++;
+    if (cardId > 200) cardId = 1;
+    loadCard(cardId);
+};
+
+btnPrev.onclick = () => {
+    cardId--;
+    if (cardId < 1) cardId = 200;
+    loadCard(cardId);
+};
+
+fetch(`https://jsonplaceholder.typicode.com/posts`)
+.then((response) => response.json())
+.then((data) => console.log(data))
 
 
 
