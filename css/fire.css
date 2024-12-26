@@ -251,3 +251,20 @@
 .time_buttons #reset:hover{
     background-color: rgba(39, 6, 6, 0.78);
 }
+
+.videoFire {
+    background-color: black;
+}
+.videoFire_video{
+    width: 700px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+.videoFire h2 {
+    color: white;
+    padding-bottom: 50px;
+    text-shadow:
+            0 0 10px rgb(243, 24, 24),
+            0 0 20px rgb(243, 13, 20),
+            0 0 30px rgb(251, 7, 7);
+}
