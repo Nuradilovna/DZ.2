@@ -71,15 +71,15 @@
 .menu {
     display: flex;
     justify-content: space-around;
-    width: 600px;
+    width: 938px;
 }
 
-.menu_link a {
-    color: var(--orange);
-    text-transform: uppercase;
+.inner_header a {
+    color: var(--black);
+    width: 300px;
 }
 
-.menu_link a:hover {
+.inner_header a:hover {
     text-decoration: underline;
 }
 
@@ -87,20 +87,34 @@
 
 .main_block {
     padding: 100px 0;
-    background-image: url(../../img_project/2start.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: black;
     height: 900px;
     width: 100%;
 }
-
-
+.inner_main{
+    position: relative;
+    left: -150px;
+}
+.inner_main h1 , .colors-buttons {
+    text-align: start;
+}
+.flag{
+    position: relative;
+    top: -651px;
+    left: 1100px;
+    width: 200px;
+    height: 800px;
+}
+.flag img{
+    width: 100%;
+    height: 100%;
+}
 /* BUTTONS COLOR PICKER */
 
 .colors-buttons {
     display: flex;
-    justify-content: space-between;
     margin-top: 50px;
+    gap: 15px;
 }
 
 .btn-color {
@@ -124,80 +138,8 @@
 
 .footer h2 {
     text-transform: uppercase;
-    color: var(--orange);
+    color: var(--black);
     font-weight: 600;
-}
-
-
-/* SLIDER BLOCK */
-
-.slider_block {
-    padding: 100px 0;
-    background: black;
-}
-
-.slider {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-    border: 3px solid var(--orange);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 30px;
-}
-
-.slide {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.slide_card {
-    color: white;
-    margin: 0 auto;
-    width: 500px;
-    text-align: center;
-}
-
-.slide_card h3 {
-    color: white;
-    text-transform: uppercase;
-    font-size: 22px;
-}
-
-.slide_card p {
-    font-size: 16px;
-    text-align: justify;
-    margin: 10px 0;
-}
-
-.slide_card a {
-    color: var(--orange);
-    text-decoration: underline;
-}
-
-.slide.active_slide {
-    display: block;
-}
-
-/* VIDEO BLOCK */
-
-.block_video {
-    background: black;
-    padding: 100px 0;
-}
-
-.inner_block_video {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
 }
 
 /* MODAL */
@@ -224,7 +166,7 @@
     width: 100%;
     padding: 40px;
     background-color: black;
-    border: 2px solid var(--orange);
+    border: 2px solid var(--black);
     border-radius: 4px;
     max-height: 80vh;
     overflow-y: auto;
@@ -262,204 +204,159 @@
 }
 
 
-/*-------BOTTLE-------*/
 
-.botlle {
-    background: black;
+/*-------CONVERTER--------*/
+
+
+.converter {
     padding: 100px 0;
+    background-color: black;
 }
 
-.bottle_inner {
+.inner_converter {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 50px;
 }
 
-.bowl {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    background: rgba(255, 255, 255, 0.1);
+.inner_converter > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.inner_converter input {
+    color: white;
+    border-radius: 20px;
+}
+.inner_converter input:hover {
+    box-shadow:
+    0 0 10px rgb(96, 243, 94),
+    0 0 20px rgb(53, 216, 8),
+    0 0 30px rgb(96, 243, 94);
+}
+label img {
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    border: 8px solid transparent;
-    animation: animate 5s linear infinite;
-    transform-origin: bottom center;
-    animation-play-state: run;
+    background-size: cover;
+}
+
+/*location*/
+@import url('https://use.fontawesome.com/releases/v6.4.2/css/all.css');
+.earth1{
+    background-color: #000;
+}
+.earth1 h2{
+    padding-bottom: 50px;
+}
+.earth{
+    position: relative;
+    width: 900px;
+    height: 680px;
+    background: #f5f5f5;
+    box-shadow: 0 30px 50px #dbdbdb;
+}
+.earth .slide .item{
+    width: 165px;
+    height: 250px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0 ,-50%);
+    border-radius: 20px;
+    box-shadow: 0 30px 50px #505050;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: inline-block;
+    transition: 0.5s;
+}
+.slide .item:nth-child(1),
+.slide .item:nth-child(2){
+    top: 0;
+    left: 0;
+    transform: translate(0,0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+.slide .item:nth-child(3){
+    left: calc(50%);
+}
+.slide .item:nth-child(4){
+    left: calc(50% + 210px);
+}
+.slide .item:nth-child(5){
+    left: calc(50% + 430px);
+}
+.slide .item:nth-child( n + 6){
+    left: calc(50% + 650px);
+    opacity: 0;
+}
+.slide .ct{
+    position: absolute;
+    top: 50%;
+    left: 6%;
+    width: 300px;
+    text-align: left;
+    color: #eee;
+    transform: translate(0 ,-50%);
+    display: none;
+}
+.slide .item:nth-child(2) .ct{
+    display: block;
+}
+.ct .name2{
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0;
+    animation: animate 1s ease-in-out 1 forwards;
+
+}
+.ct .des{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+}
+.ct button{
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.6s forwards;
 }
 
 @keyframes animate {
-    0% {
-        transform: rotate(0deg);
+    from{
+        opacity: 0;
+        transform: translate(0 ,100px);
+        filter: blur(33px);
     }
-    25% {
-        transform: rotate(22deg);
-    }
-    50% {
-        transform: rotate(0deg);
-    }
-    75% {
-        transform: rotate(-22deg);
-    }
-    100% {
-        filter: hue-rotate(360deg);
+    to{
+        opacity: 1;
+        transform: translate(0);
+        filter: blur(0);
     }
 }
-
-.bowl::before {
-    content: "";
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40%;
-    height: 30px;
-    border: 15px solid #444;
-    border-radius: 50%;
-    box-shadow: 0 10px #222;
-
-}
-
-.bowl::after {
-    content: "";
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 150px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.05);
-    transform-origin: center;
-    animation: animatebowlshadow 5s linear infinite;
-    border-radius: 50%;
-    animation-play-state: running;
-
-}
-
-
-@keyframes animatebowlshadow {
-    0% {
-        left: 50%;
-        width: 150px;
-        height: 60px;
-    }
-    25% {
-        left: 55%;
-        width: 140px;
-        height: 65px;
-    }
-    50% {
-        left: 50%;
-        width: 150px;
-        height: 60px;
-    }
-    75% {
-        left: 45%;
-        width: 140px;
-        height: 65px;
-    }
-    100% {
-
-
-    }
-}
-
-
-.liquid {
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    right: 5px;
-    bottom: 5px;
-    background: #1ae907;
-    border-bottom-left-radius: 150px;
-    border-bottom-right-radius: 150px;
-    filter: drop-shadow(0 0 80px #1ae907);
-    transform-origin: top center;
-    animation: animateliquid 5s linear infinite;
-    animation-play-state: running;
-}
-
-@keyframes animateliquid {
-    0% {
-        transform: rotate(0deg);
-    }
-    25% {
-        transform: rotate(-22deg);
-    }
-    30% {
-        transform: rotate(-23deg);
-    }
-    50% {
-        transform: rotate(0deg);
-    }
-    75% {
-        transform: rotate(22deg);
-    }
-    80% {
-        transform: rotate(23deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
-
-
-}
-
-.liquid::before {
-    content: "";
-    position: absolute;
-    top: -10px;
+.btnE{
     width: 100%;
-    height: 20px;
-    background: #15be05;
-    border-radius: 50%;
-    filter: drop-shadow(0 0 80px #15be05);
-}
-
-.shadow {
+    text-align: center;
     position: absolute;
-    top: calc(50% + 150px);
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 260px;
-    height: 40px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    animation: animateshadow 5s linear infinite;
-    animation-play-state: running;
-
+    bottom: 20px;
 }
-
-@keyframes animateshadow {
-    0% {
-        left: 50%;
-        width: 260px;
-        height: 40px;
-        top: calc(50% + 150px);
-
-    }
-
-    25% {
-        left: 55%;
-        width: 265px;
-        height: 30px;
-        top: calc(50% + 130px);
-
-    }
-    50% {
-        left: 50%;
-        width: 260px;
-        height: 40px;
-        top: calc(50% + 150px);
-
-    }
-    75% {
-        left: 45%;
-        width: 265px;
-        height: 30px;
-        top: calc(50% + 130px);
-
-    }
-    100% {
-    }
+.btnE button {
+    width: 40px;
+    height: 35px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 0 5px;
+    border: 1px solid #000000;
+    transition: 0.3s;
+}
+.btnE button:hover{
+    background: #ababab;
+    color: #fff;
 }

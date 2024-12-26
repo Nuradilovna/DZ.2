@@ -1,0 +1,129 @@
+/* HEADER */
+
+.header {
+    height: 80px;
+    background: black;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+.inner_header {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logotype img {
+    height: 170px;
+    width: 300px;
+}
+.bender_earth{
+    background-color: #ffffff;
+    height: 85px;
+    width: 85px;
+}
+.bender_air{
+    background-color: #ffffff;
+    height: 85px;
+    width: 85px;
+
+}
+.bender_water{
+    background-color: #ffffff;
+    height: 85px;
+    width: 85px;
+}
+.bender_fire{
+    background-color: #ffffff;
+    height: 85px;
+    width: 85px;
+}
+.bender_earth:hover{
+    background-color: lawngreen;
+}
+.bender_fire:hover{
+    background-color: red;
+}
+.bender_air:hover{
+    background-color: powderblue;
+}
+.bender_water:hover{
+    background-color: blue;
+}
+.inner_header a {
+    width: 300px;
+    height: 100%;
+    color: white;
+
+}
+
+/* LOGOTYPE */
+
+.logotype {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* HEADER MENU */
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    width: 938px;
+}
+
+/**/
+.cards {
+    padding-top: 150px;
+    min-height: 100vh;
+    background-image: url(../../img_project/air-location2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.cards_inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 140px;
+}
+.card{
+    background-color: white;
+    width: 300px;
+    height: 400px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 30px ;
+    box-shadow: 0 0 30px white;
+}
+.img{
+    width: 280px;
+    height: 150px;
+    border-radius: 20px;
+    background-image: url("../../img_project/southern.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 20px;
+}
+
+h2{
+    margin-bottom: 5px;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: black;
+}
+p {
+    font-size: 15px;
+    text-align:justify;
+}
+

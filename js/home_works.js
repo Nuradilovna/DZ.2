@@ -1,16 +1,64 @@
-//GMAIL BLOCK
-const gmailInput = document.querySelector('#gmail_input')
-const gmailButton = document.querySelector('#gmail_button')
-const gmailResult = document.querySelector('#gmail_result')
+// //GMAIL BLOCK
+// const gmailInput = document.querySelector('#gmail_input')
+// const gmailButton = document.querySelector('#gmail_button')
+// const gmailResult = document.querySelector('#gmail_result')
+//
+// const regExp = /^\w{1,1000}\S@gmail\.com$/
+// gmailButton.onclick = () => {
+//     if (regExp.test(gmailInput.value)) {
+//         gmailResult.innerHTML="OK"
+//         gmailResult.style.color="green"
+//     }else{
+//         gmailResult.innerHTML="Invalid email address";
+//         gmailResult.style.color="red"
+//     }
+// }
 
-const regExp = /^\w{1,1000}\S@gmail\.com$/
-gmailButton.onclick = () => {
-    if (regExp.test(gmailInput.value)) {
-        gmailResult.innerHTML="OK"
-        gmailResult.style.color="green"
-    }else{
-        gmailResult.innerHTML="Invalid email address";
-        gmailResult.style.color="red"
+// Tab slider
+const tabContentBlocks = document.querySelectorAll(".tab_content_block");
+const tabs=document.querySelectorAll(".tab_content_item");
+const tabsParent=document.querySelector(".tab_content_items")
+let index = 0
+let interval
+
+const hideTabContent=()=>{
+    tabContentBlocks.forEach(item=>{
+        item.style.display="none";
+    })
+    tabs.forEach(item=>{
+        item.classList.remove("tab_content_item_active");
+    })
+}
+const showTabContent=(index= 0)=>{
+    tabContentBlocks[index].style.display="block";
+    tabs[index].classList.add("tab_content_item_active");
+}
+hideTabContent();
+showTabContent();
+
+const autoTabs = () => {
+    interval = setInterval(() => {
+        hideTabContent();
+        index ++ >= tabs.length ? index = 0 : index = index ++;
+        showTabContent(index);
+    }, 5000);
+};
+
+autoTabs();
+
+
+tabsParent.onclick=(e)=>{
+    if (e.target.classList.contains('tab_content_item')) {
+        tabs.forEach((item,newIndex)=>{
+            if (e.target===item){
+                clearInterval(interval);
+                index = newIndex;
+                hideTabContent();
+                showTabContent(index);
+                autoTabs();
+            }
+        })
+
     }
 }
 
@@ -30,7 +78,7 @@ gmailButton.onclick = () => {
 
 // MOVE BLOCK
 
-const parentBlock = document.querySelector(".parent_block");
+const parentBlock = document.querySelector(".parent_block2");
 const childBlock = document.querySelector(".child_block");
 const maxWidth = parentBlock.offsetWidth - childBlock.offsetWidth;
 const maxHeight = parentBlock.offsetHeight - childBlock.offsetHeight;
@@ -40,6 +88,10 @@ let positionX = 0;
 let positionY = 0;
 let direction = 1;
 
+childBlock.onclick=()=>{
+    if (childBlock.classList.contains("head2")) childBlock.classList.remove("head2")
+    else childBlock.classList.add("head2")
+}
 
 const moveBlock = () => {
     if(direction === 1){
@@ -78,38 +130,7 @@ const moveBlock = () => {
 }
 moveBlock()
 
-//STOP WATCH
 
-const seconds = document.querySelector('#seconds')
-
-let intervalId;
-let secondsValue = 0;
-let Run = false ;
-
-const startTimer = () => {
-    if(!Run) {
-        intervalId = setInterval(() => {
-            secondsValue++
-            seconds.innerHTML = secondsValue
-        }, 1000)
-    }
-    Run = true
-}
-document.querySelector('#start').addEventListener('click', startTimer)
-
-const stopTimer = () => {
-    clearInterval(intervalId)
-    Run = false
-}
-document.querySelector('#stop').addEventListener('click', stopTimer)
-
-const resetTimer = () => {
-    clearInterval(intervalId)
-    secondsValue = 0
-    seconds.innerHTML = secondsValue
-    Run = false
-}
-document.querySelector('#reset').addEventListener('click', resetTimer)
 
 //character-card
 
@@ -133,21 +154,26 @@ request.onload = () => {
         img.src = character.photo;
         photoDiv.appendChild(img);
 
-        const name = document.createElement('h3');
+        const textBox = document.createElement('div');
+        textBox.classList.add('textBox');
+
+        const name = document.createElement('p');
+        name.classList.add('head');
         name.textContent = character.name;
 
-        const element = document.createElement('p');
-        element.classList.add('element');
-        element.textContent = `Element: ${character.element}`;
+        const element = document.createElement('span');
+        element.textContent = character.element;
 
         const age = document.createElement('p');
         age.classList.add('age');
         age.textContent = `Age: ${character.age}`;
 
+        textBox.appendChild(name);
+        textBox.appendChild(element);
+        textBox.appendChild(age);
+
         card.appendChild(photoDiv);
-        card.appendChild(name);
-        card.appendChild(element);
-        card.appendChild(age);
+        card.appendChild(textBox);
 
         characterList.appendChild(card);
     });

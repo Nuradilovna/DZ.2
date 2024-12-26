@@ -1,4 +1,4 @@
-// RANDOM COLOR GENERATOR
+// // RANDOM COLOR GENERATOR
 
 const buttonsColor = document.querySelectorAll('.btn-color')
 const javaScript = document.querySelector('#js-color')
@@ -28,3 +28,39 @@ window.onkeydown = (event) => {
         setRandomColors()
     }
 }
+
+
+
+//STOP WATCH
+
+const seconds = document.querySelector('#seconds')
+
+let intervalId;
+let secondsValue = 0;
+let Run = false ;
+
+const startTimer = () => {
+    if(!Run) {
+        intervalId = setInterval(() => {
+            secondsValue++
+            seconds.innerHTML = secondsValue
+        }, 1000)
+    }
+    Run = true
+}
+document.querySelector('#start').addEventListener('click', startTimer)
+
+const stopTimer = () => {
+    clearInterval(intervalId)
+    Run = false
+}
+document.querySelector('#stop').addEventListener('click', stopTimer)
+
+const resetTimer = () => {
+    clearInterval(intervalId)
+    secondsValue = 0
+    seconds.innerHTML = secondsValue
+    Run = false
+}
+document.querySelector('#reset').addEventListener('click', resetTimer)
+

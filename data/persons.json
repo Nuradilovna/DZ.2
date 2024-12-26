@@ -1,39 +1,39 @@
 [
   {
-    "name": "Aang",
-    "photo": "https://i.pinimg.com/736x/75/3f/e1/753fe1e5853fa966035158b56458292d.jpg",
-    "element": "avatar",
-    "age": 112
+    "name": "ГИЯЦО",
+    "photo": "https://i.pinimg.com/736x/49/7d/46/497d46f25110de489373608006b3d63d.jpg",
+    "element": "мастер магии воздуха, один из пяти членов совета старейшин в Южном Храме Воздуха.",
+    "age": 80
   },
   {
-    "name": "Katara",
-    "photo": "https://i.pinimg.com/736x/86/60/90/86609021eee6b9b02e810027413d1eca.jpg",
-    "element": "water",
+    "name": "Совет старейшин",
+    "photo": "https://i.pinimg.com/736x/3b/dd/cf/3bddcf3bd29e99dff9f1519ecf8c91bd.jpg",
+    "element": "главная группа старейших монахов, выполнявшая роль центрального органа государственной власти у Воздушных кочевников. ",
+    "age": "не известно"
+  },
+  {
+    "name": "ДЕТИ",
+    "photo": "https://i.pinimg.com/736x/b5/3c/79/b53c798bd4939d439810a11ef8b8322c.jpg",
+    "element": "маги огня не кого не пожелели",
     "age": 16
   },
   {
-    "name": "Sokka",
-    "photo": "https://i.pinimg.com/736x/ea/f1/71/eaf1716c286b179c7a50b2f4b3b28d7c.jpg",
-    "element": "human",
-    "age": 16
+    "name": "ИО",
+    "photo": "https://i.pinimg.com/736x/25/fd/59/25fd59dfb0beee9049ac3cfde9f4b5af.jpg",
+    "element": "Она была настоятельницей Храма во времена детства Аанга.",
+    "age": "не известно"
   },
   {
-    "name": "Zuko",
-    "photo": "https://i.pinimg.com/736x/f3/ac/60/f3ac60495d1922cc97723975473b7c8d.jpg",
-    "element": "fire",
-    "age": 16
+    "name": "ОБЫЧНЫЙ ДЕНЬ",
+    "photo": "https://i.pinimg.com/736x/0e/2a/2d/0e2a2d6aa3bfa7503298365299c634ff.jpg",
+    "element": "Несмотря на то, что народ Воздуха называется кочевниками, у них есть территории, на которых располагаются Храмы Воздуха. ",
+    "age": "(("
   },
   {
-    "name": "Toph",
-    "photo": "https://i.pinimg.com/736x/c4/bd/62/c4bd62f03f2db1b6d5733b405ac48314.jpg",
-    "element": "earth",
-    "age": 12
-  },
-  {
-    "name": "Bumi",
-    "photo": "https://i.pinimg.com/736x/da/a8/6f/daa86ff97a639b0e834c82cbc2972bf7.jpg",
-    "element": "earth",
-    "age": 112
+    "name": "ЯНГЧЕН",
+    "photo": "https://i.pinimg.com/736x/68/5d/da/685dda2abd1b4343771c601eda75e77d.jpg",
+    "element": "Как Аватар, Янгчен была очень уважаема. Люди ценили её мудрость и силу. ",
+    "age": "не известно"
   },
   {
     "name": "Appa",

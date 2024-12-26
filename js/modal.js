@@ -40,3 +40,25 @@ modal.onclick = (event) => {
 // setTimeout(openModal, 10000);
 
 window.addEventListener('scroll', onScroll);
+
+//POST DATA
+
+const token = '7664197035:AAFRH9B7QRWW2KEIhwg3pUKrR7XCb1f1QNk'
+const form = document.querySelector('form')
+const chat_id = '@nurperi_44'
+const URL_API = `https://api.telegram.org/bot${token}/sendMessage`;
+
+form.onsubmit = (event) => {
+    event.preventDefault()
+    const {name ,phone} = Object.fromEntries(new FormData(form).entries())
+    const text =`Имя: ${name}\nНомер: ${phone}`
+
+    fetch(URL_API , {
+        method: 'POST',
+        headers: {"Content-type" : "application/json" },
+        body: JSON.stringify({
+            chat_id: chat_id,
+            text: text
+        })
+    })
+}
