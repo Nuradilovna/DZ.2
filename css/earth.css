@@ -123,9 +123,8 @@
 }
 
 /* FOOTER */
-
 .footer {
-    background: #2c2d2f;
+    background-image: url(../../img_project/slide.jpg);
     width: 100%;
 }
 
@@ -140,6 +139,11 @@
     text-transform: uppercase;
     color: var(--black);
     font-weight: 600;
+    text-shadow:
+            0 0 10px rgba(237, 100, 14, 0.5),
+            0 0 20px rgb(90, 32, 7),
+            0 0 30px rgb(166, 87, 8),
+            0 0 40px rgba(250, 205, 26, 0.98);
 }
 
 /* MODAL */

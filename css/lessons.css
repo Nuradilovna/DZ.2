@@ -84,71 +84,53 @@
     width: 250%;
 }
 
-
-
-/* PHONE CHECKER */
-
-/*.phone_block {*/
-/*    background: black;*/
-/*    padding: 100px 0;*/
-/*}*/
-
-/*.inner_phone_block {*/
-/*    margin-top: 50px;*/
-/*    display: flex;*/
-/*    justify-content: space-evenly;*/
-/*    border: 1px solid var(--orange);*/
-/*    height: 300px;*/
-/*    border-radius: 20px;*/
-/*    align-items: center;*/
-/*}*/
-
-/*.form_phone {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    align-items: center;*/
-/*}*/
-
-/*.form_phone button {*/
-/*    width: 100%;*/
-/*    margin: 20px 0;*/
-/*}*/
-
 /*------CARD SWITCHER------*/
 
-/*.card_switcher {*/
-/*    background-color: black;*/
-/*    padding: 100px 0;*/
-/*}*/
+.card_switcher {
+    padding: 200px 0;
+    background:black;
+}
+.card_switcher h3 {
+    text-shadow:
+            0 0 10px rgb(8, 183, 246),
+            0 0 20px rgb(0, 81, 255),
+            0 0 30px rgb(250, 250, 252),
+            0 0 40px rgb(149, 122, 255); ;
+}
 
-/*.card {*/
-/*    width: 500px;*/
-/*    height: 150px;*/
-/*    border: 1px solid var(--orange);*/
-/*    text-align: center;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    justify-content: space-around;*/
-/*    align-items: center;*/
-/*    padding: 10px;*/
-/*}*/
+.card_s {
+    width: 500px;
+    height: 200px;
+    border: 1px solid var(--black);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px white;
+    background:linear-gradient(#8f8fed, white, skyblue);
+}
 
-/*.card p {*/
-/*    color: var(--orange);*/
-/*    font-size: 20px;*/
-/*}*/
+.card_s p {
+    color: var(--black);
+    font-size: 20px;
+    text-shadow: 0 1px 2px rgba(0, 81, 255, 0.97);
+}
 
-/*.card span {*/
-/*    color: white;*/
-/*    font-size: 30px;*/
-/*}*/
+.card_s span {
+    color: white;
+    font-size: 30px;
+    text-shadow: 0 1px 2px rgba(3, 49, 149, 0.97);
+}
 
-/*.inner_card_switcher {*/
-/*    margin-top: 50px;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: space-between;*/
-/*}*/
+.inner_card_switcher {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
 
 /*------WEATHER------*/
