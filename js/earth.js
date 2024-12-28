@@ -36,44 +36,51 @@ const somInput = document.querySelector('#som');
 const usdInput = document.querySelector('#usd');
 const eurInput = document.querySelector('#eur');
 
+async function converterFnc () {
+    try {
+        const response = await fetch('../data/converter.json');
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching exchange rates:', error);
+        return null;
+    }
+}
+
 
 const converter = (element, targetElement) => {
-    element.oninput = () => {
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', '../data/converter.json');
-        xhr.setRequestHeader('Content-type', 'application/json');
-        xhr.send();
+    element.oninput = async () => {
+        const data = await converterFnc();
 
-        xhr.onload = () => {
-            const data = JSON.parse(xhr.response);
+        if (element.id === "som") {
+            targetElement.value = (element.value * data.usd).toFixed(2);
+            usdInput.value = (element.value / data.usd).toFixed(2);
+            eurInput.value = (element.value / data.usd / data.eur).toFixed(2);
+        }
 
-            if (element.id === "som") {
-                targetElement.value = (element.value * data.usd).toFixed(2);
-                usdInput.value = (element.value / data.usd).toFixed(2);
-                eurInput.value = (element.value / data.usd / data.eur).toFixed(2);
-            }
-            if (element.id === "usd") {
-                targetElement.value = (element.value * data.usd).toFixed(2);
-                somInput.value = (element.value * data.usd).toFixed(2);
-                eurInput.value = (element.value * data.usd / data.eur).toFixed(2);
-            }
-            if (element.id === "eur") {
-                targetElement.value = (element.value * data.eur).toFixed(2);
-                somInput.value = (element.value * data.eur).toFixed(2);
-                usdInput.value = (element.value * data.eur / data.usd).toFixed(2);
-            }
+        if (element.id === "usd") {
+            targetElement.value = (element.value * data.usd).toFixed(2);
+            somInput.value = (element.value * data.usd).toFixed(2);
+            eurInput.value = (element.value * data.usd / data.eur).toFixed(2);
+        }
 
-            if (element.value === "") {
-                somInput.value = usdInput.value = eurInput.value = ""
-            }
-        };
+        if (element.id === "eur") {
+            targetElement.value = (element.value * data.eur).toFixed(2);
+            somInput.value = (element.value * data.eur).toFixed(2);
+            usdInput.value = (element.value * data.eur / data.usd).toFixed(2);
+        }
+
+        if (element.value === "") {
+            somInput.value = usdInput.value = eurInput.value = "";
+        }
     };
 };
+
 converter(somInput, usdInput);
 converter(usdInput, somInput);
 converter(usdInput, eurInput);
 converter(eurInput, somInput);
 converter(eurInput, usdInput);
+
 
 
 //location
@@ -90,65 +97,65 @@ $prev.onclick=()=>{
 }
 
 //character
-const request = new XMLHttpRequest();
-request.open('GET', '../data/earhtCard.json');
-request.setRequestHeader('Content-type', 'application/json');
-request.send();
+async function earthCharacters() {
+    try {
+        const response = await fetch('../data/earhtCard.json');
+        const data = await response.json();
+        const galleryList = document.querySelector('.gallery-list');
 
-request.onload = () => {
-    const data = JSON.parse(request.response);
-    const galleryList = document.querySelector('.gallery-list');
+        data.forEach(character => {
+            const card = document.createElement('div');
+            card.classList.add('card');
 
-    data.forEach(character => {
-        const card = document.createElement('div');
-        card.classList.add('card');
 
-        // Контейнер для первого контента (фото)
-        const firstContent = document.createElement('div');
-        firstContent.classList.add('first-content');
+            const firstContent = document.createElement('div');
+            firstContent.classList.add('first-content');
 
-        const photoDiv = document.createElement('div');
-        photoDiv.classList.add('card-photo');
-        const img = document.createElement('img');
-        img.src = character.photo;
-        photoDiv.appendChild(img);
-        firstContent.appendChild(photoDiv);
+            const photoDiv = document.createElement('div');
+            photoDiv.classList.add('card-photo');
+            const img = document.createElement('img');
+            img.src = character.photo;
+            photoDiv.appendChild(img);
+            firstContent.appendChild(photoDiv);
 
-        // Контейнер для второго контента (тексты)
-        const secondContent = document.createElement('div');
-        secondContent.classList.add('second-content');
+            const secondContent = document.createElement('div');
+            secondContent.classList.add('second-content');
 
-        const name = document.createElement('p');
-        name.classList.add('character-name');
-        name.textContent = character.name;
+            const name = document.createElement('p');
+            name.classList.add('character-name');
+            name.textContent = character.name;
 
-        const element = document.createElement('p');
-        element.classList.add('element');
-        element.textContent = character.element;
+            const element = document.createElement('p');
+            element.classList.add('element');
+            element.textContent = character.element;
 
-        const age = document.createElement('p');
-        age.classList.add('age');
-        age.textContent = `Age: ${character.age}`;
+            const age = document.createElement('p');
+            age.classList.add('age');
+            age.textContent = `Age: ${character.age}`;
 
-        secondContent.appendChild(name);
-        secondContent.appendChild(element);
-        secondContent.appendChild(age);
+            secondContent.appendChild(name);
+            secondContent.appendChild(element);
+            secondContent.appendChild(age);
 
-        // Добавляем контент в карточку
-        card.appendChild(firstContent);
-        card.appendChild(secondContent);
+            card.appendChild(firstContent);
+            card.appendChild(secondContent);
 
-        // Назначаем фоновое изображение при наведении
-        card.addEventListener('mouseenter', () => {
-            card.style.backgroundImage = `url(${character.backgroundPhoto})`;
-            card.style.backgroundSize = 'cover';
-            card.style.backgroundPosition = 'center';
+            card.addEventListener('mouseenter', () => {
+                card.style.backgroundImage = `url(${character.backgroundPhoto})`;
+                card.style.backgroundSize = 'cover';
+                card.style.backgroundPosition = 'center';
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.backgroundImage = '';
+            });
+
+            galleryList.appendChild(card);
         });
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
 
-        card.addEventListener('mouseleave', () => {
-            card.style.backgroundImage = ''; // Убираем фон при уходе с карточки
-        });
+earthCharacters();
 
-        galleryList.appendChild(card);
-    });
-};

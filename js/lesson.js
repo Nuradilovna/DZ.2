@@ -82,74 +82,6 @@ buttonOne.onclick=() => {
 buttonTwo.onclick=() => {
     openWater.style.backgroundImage = `url(${json.imgBlock2})`;
 };
-// // RANDOM COLOR GENERATOR
-//
-// const buttonsColor = document.querySelectorAll('.btn-color')
-// const javaScript = document.querySelector('#js-color')
-//
-// const generateRandomColor = () => {
-//     const hexCodes = '0123456789ABCDEF'
-//     let color = ''
-//     for (let i = 0; i < 6; i++) {
-//         color += hexCodes[Math.floor(Math.random() * hexCodes.length)]
-//     }
-//     return '#' + color
-// }
-//
-// const setRandomColors = () => {
-//     buttonsColor.forEach((buttonColor) => {
-//         buttonColor.innerHTML = generateRandomColor()
-//         buttonColor.onclick = (event) => {
-//             javaScript.style.color = event.target.innerHTML
-//         }
-//     })
-// }
-//
-// window.onload = () => setRandomColors()
-// window.onkeydown = (event) => {
-//     if (event.code.toLowerCase() === 'space') {
-//         event.preventDefault()
-//         setRandomColors()
-//     }
-// }
-// //CARD SWITCHER
-// const cardBlock = document.querySelector('.card');
-// const btnNext = document.querySelector('#btn-next');
-// const btnPrev = document.querySelector('#btn-prev');
-//
-// let cardId = 1;
-//
-// function loadCard(id) {
-//     fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
-//         .then((response) => response.json())
-//         .then((data) => {
-//             const { title, completed, id } = data;
-//             cardBlock.innerHTML = `
-//                 <p>${title}</p>
-//                 <p>${completed}</p>
-//                 <span>${id}</span>
-//             `;
-//         });
-// }
-//
-// loadCard(cardId);
-//
-// btnNext.onclick = () => {
-//     cardId++;
-//     if (cardId > 200) cardId = 1;
-//     loadCard(cardId);
-// };
-//
-// btnPrev.onclick = () => {
-//     cardId--;
-//     if (cardId < 1) cardId = 200;
-//     loadCard(cardId);
-// };
-
-// fetch(`https://jsonplaceholder.typicode.com/posts`)
-// .then((response) => response.json())
-// .then((data) => console.log(data))
-
 
 //WEATHER
 
@@ -176,48 +108,49 @@ searchButton.onclick = async () =>{
 
 
 //character-card
-const request = new XMLHttpRequest();
-request.open('GET', '../data/waterCard.json');
-request.setRequestHeader('Content-type', 'application/json');
-request.send();
+async function loadData() {
+    try {
+        const response = await fetch('../data/waterCard.json');
+        const data = await response.json();
+        const galleryList = document.querySelector('.gallery-list');
 
-request.onload = () => {
-    const data = JSON.parse(request.response);
+        data.forEach(character => {
+            const card = document.createElement('div');
+            card.classList.add('card');
 
-    const galleryList = document.querySelector('.gallery-list');
+            const photoDiv = document.createElement('div');
+            photoDiv.classList.add('card-photo');
+            const img = document.createElement('img');
+            img.src = character.photo;
+            photoDiv.appendChild(img);
 
-    data.forEach(character => {
-        const card = document.createElement('div');
-        card.classList.add('card');
+            const descriptionBox = document.createElement('div');
+            descriptionBox.classList.add('description-box');
 
-        const photoDiv = document.createElement('div');
-        photoDiv.classList.add('card-photo');
-        const img = document.createElement('img');
-        img.src = character.photo;
-        photoDiv.appendChild(img);
+            const name = document.createElement('p');
+            name.classList.add('character-name');
+            name.textContent = character.name;
 
-        const descriptionBox = document.createElement('div');
-        descriptionBox.classList.add('description-box');
+            const element = document.createElement('span');
+            element.textContent = character.element;
 
-        const name = document.createElement('p');
-        name.classList.add('character-name');
-        name.textContent = character.name;
+            const age = document.createElement('p');
+            age.classList.add('age');
+            age.textContent = `Age: ${character.age}`;
 
-        const element = document.createElement('span');
-        element.textContent = character.element;
+            descriptionBox.appendChild(name);
+            descriptionBox.appendChild(element);
+            descriptionBox.appendChild(age);
 
-        const age = document.createElement('p');
-        age.classList.add('age');
-        age.textContent = `Age: ${character.age}`;
+            card.appendChild(photoDiv);
+            card.appendChild(descriptionBox);
 
-        descriptionBox.appendChild(name);
-        descriptionBox.appendChild(element);
-        descriptionBox.appendChild(age);
+            galleryList.appendChild(card);
+        });
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
 
-        card.appendChild(photoDiv);
-        card.appendChild(descriptionBox);
-
-        galleryList.appendChild(card);
-    });
-};
+loadData();
 

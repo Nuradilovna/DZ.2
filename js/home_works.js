@@ -133,60 +133,59 @@ moveBlock()
 
 
 //character-card
+async function airCharacters() {
+    try {
+        const response = await fetch('../data/persons.json');
+        const data = await response.json();
+        const characterList = document.querySelector('.characters-list');
 
-const request = new XMLHttpRequest();
-request.open('GET', '../data/persons.json');
-request.setRequestHeader('Content-type', 'application/json');
-request.send();
+        data.forEach(character => {
+            const card = document.createElement('div');
+            card.classList.add('character-card');
 
-request.onload = () => {
-    const data = JSON.parse(request.response);
+            const photoDiv = document.createElement('div');
+            photoDiv.classList.add('character-photo');
+            const img = document.createElement('img');
+            img.src = character.photo;
+            photoDiv.appendChild(img);
 
-    const characterList = document.querySelector('.characters-list');
+            const textBox = document.createElement('div');
+            textBox.classList.add('textBox');
 
-    data.forEach(character => {
-        const card = document.createElement('div');
-        card.classList.add('character-card');
+            const name = document.createElement('p');
+            name.classList.add('head');
+            name.textContent = character.name;
 
-        const photoDiv = document.createElement('div');
-        photoDiv.classList.add('character-photo');
-        const img = document.createElement('img');
-        img.src = character.photo;
-        photoDiv.appendChild(img);
+            const element = document.createElement('span');
+            element.textContent = character.element;
 
-        const textBox = document.createElement('div');
-        textBox.classList.add('textBox');
+            const age = document.createElement('p');
+            age.classList.add('age');
+            age.textContent = `Age: ${character.age}`;
 
-        const name = document.createElement('p');
-        name.classList.add('head');
-        name.textContent = character.name;
+            textBox.appendChild(name);
+            textBox.appendChild(element);
+            textBox.appendChild(age);
 
-        const element = document.createElement('span');
-        element.textContent = character.element;
+            card.appendChild(photoDiv);
+            card.appendChild(textBox);
 
-        const age = document.createElement('p');
-        age.classList.add('age');
-        age.textContent = `Age: ${character.age}`;
-
-        textBox.appendChild(name);
-        textBox.appendChild(element);
-        textBox.appendChild(age);
-
-        card.appendChild(photoDiv);
-        card.appendChild(textBox);
-
-        characterList.appendChild(card);
-    });
-};
+            characterList.appendChild(card);
+        });
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+airCharacters();
 
 //uber mich
 
-const request_2 = new XMLHttpRequest();
-request_2.open('GET','../data/any.json')
-request_2.setRequestHeader('Content-type','application/json')
-request_2.send()
-
-request_2.onload = ()=> {
-    const any = JSON.parse(request_2.response)
-    console.log(any)
-}
+// const request_2 = new XMLHttpRequest();
+// request_2.open('GET','../data/any.json')
+// request_2.setRequestHeader('Content-type','application/json')
+// request_2.send()
+//
+// request_2.onload = ()=> {
+//     const any = JSON.parse(request_2.response)
+//     console.log(any)
+// }

@@ -39,5 +39,10 @@
     "photo": "https://i.pinimg.com/736x/97/5e/18/975e18572fa5c8547637319d4b3c3745.jpg",
     "backgroundPhoto": "https://i.pinimg.com/736x/a7/d0/ea/a7d0ea842eaa221f9e90cab4632fa564.jpg",
     "age" : 60
+  },{
+    "name": "Урса",
+    "photo": "https://i.pinimg.com/736x/37/27/92/372792885cf8dfb2989103a60b7f166a.jpg",
+    "backgroundPhoto": "https://i.pinimg.com/736x/dc/c5/70/dcc570fa3aeb414c14405d745e5a6a4a.jpg",
+    "age" : 40
   }
 ]

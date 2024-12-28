@@ -66,60 +66,57 @@ document.querySelector('#reset').addEventListener('click', resetTimer)
 
 
 //character
-const request = new XMLHttpRequest();
-request.open('GET', '../data/fireCard.json');
-request.setRequestHeader('Content-type', 'application/json');
-request.send();
+async function FireCharacters() {
+    try {
+        const response = await fetch('../data/fireCard.json');
+        const data = await response.json();
+        const galleryList = document.querySelector('.gallery-list');
 
-request.onload = () => {
-    const data = JSON.parse(request.response);
-    const galleryList = document.querySelector('.gallery-list');
+        data.forEach(character => {
+            const card = document.createElement('div');
+            card.classList.add('card');
 
-    data.forEach(character => {
-        const card = document.createElement('div');
-        card.classList.add('card');
+            const firstContent = document.createElement('div');
+            firstContent.classList.add('cover');
 
-        // Контейнер для первого контента (фото)
-        const firstContent = document.createElement('div');
-        firstContent.classList.add('cover'); // The cover div will hold the photo
+            const photoDiv = document.createElement('div');
+            photoDiv.classList.add('card-photo');
+            const img = document.createElement('img');
+            img.src = character.photo;
+            photoDiv.appendChild(img);
+            firstContent.appendChild(photoDiv);
 
-        const photoDiv = document.createElement('div');
-        photoDiv.classList.add('card-photo');
-        const img = document.createElement('img');
-        img.src = character.photo;  // Character's photo
-        photoDiv.appendChild(img);
-        firstContent.appendChild(photoDiv);
+            const secondContent = document.createElement('div');
+            secondContent.classList.add('book');  // The book div for name, age, and background
 
-        // Контейнер для второго контента (name, age и background photo)
-        const secondContent = document.createElement('div');
-        secondContent.classList.add('book');  // The book div for name, age, and background
+            const name = document.createElement('p');
+            name.classList.add('character-name');
+            name.textContent = character.name;
+            secondContent.appendChild(name);
 
-        const name = document.createElement('p');
-        name.classList.add('character-name');
-        name.textContent = character.name; // Character's name
-        secondContent.appendChild(name);
+            const age = document.createElement('p');
+            age.classList.add('age');
+            age.textContent = `Возраст: ${character.age}`;
+            secondContent.appendChild(age);
 
-        const age = document.createElement('p');
-        age.classList.add('age');
-        age.textContent = `Возраст: ${character.age}`; // Character's age
-        secondContent.appendChild(age);
+            card.appendChild(firstContent);
+            card.appendChild(secondContent);
 
-        // Добавляем контент в карточку
-        card.appendChild(firstContent);
-        card.appendChild(secondContent);
+            card.addEventListener('mouseenter', () => {
+                card.style.backgroundImage = `url(${character.backgroundPhoto})`;
+                card.style.backgroundSize = 'cover';
+                card.style.backgroundPosition = 'center';
+            });
 
-        // Добавляем фоновое изображение при наведении на карточку
-        card.addEventListener('mouseenter', () => {
-            card.style.backgroundImage = `url(${character.backgroundPhoto})`; // Set background on hover
-            card.style.backgroundSize = 'cover';
-            card.style.backgroundPosition = 'center';
+            card.addEventListener('mouseleave', () => {
+                card.style.backgroundImage = '';
+            });
+
+            galleryList.appendChild(card);
         });
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
 
-        card.addEventListener('mouseleave', () => {
-            card.style.backgroundImage = ''; // Remove background on hover out
-        });
-
-        galleryList.appendChild(card);
-    });
-};
-
+FireCharacters();
