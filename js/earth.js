@@ -88,3 +88,67 @@ $prev.onclick=()=>{
     const items =document.querySelectorAll('.item')
     document.querySelector('.slide').prepend(items[items.length-1])
 }
+
+//character
+const request = new XMLHttpRequest();
+request.open('GET', '../data/earhtCard.json');
+request.setRequestHeader('Content-type', 'application/json');
+request.send();
+
+request.onload = () => {
+    const data = JSON.parse(request.response);
+    const galleryList = document.querySelector('.gallery-list');
+
+    data.forEach(character => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+
+        // Контейнер для первого контента (фото)
+        const firstContent = document.createElement('div');
+        firstContent.classList.add('first-content');
+
+        const photoDiv = document.createElement('div');
+        photoDiv.classList.add('card-photo');
+        const img = document.createElement('img');
+        img.src = character.photo;
+        photoDiv.appendChild(img);
+        firstContent.appendChild(photoDiv);
+
+        // Контейнер для второго контента (тексты)
+        const secondContent = document.createElement('div');
+        secondContent.classList.add('second-content');
+
+        const name = document.createElement('p');
+        name.classList.add('character-name');
+        name.textContent = character.name;
+
+        const element = document.createElement('p');
+        element.classList.add('element');
+        element.textContent = character.element;
+
+        const age = document.createElement('p');
+        age.classList.add('age');
+        age.textContent = `Age: ${character.age}`;
+
+        secondContent.appendChild(name);
+        secondContent.appendChild(element);
+        secondContent.appendChild(age);
+
+        // Добавляем контент в карточку
+        card.appendChild(firstContent);
+        card.appendChild(secondContent);
+
+        // Назначаем фоновое изображение при наведении
+        card.addEventListener('mouseenter', () => {
+            card.style.backgroundImage = `url(${character.backgroundPhoto})`;
+            card.style.backgroundSize = 'cover';
+            card.style.backgroundPosition = 'center';
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.backgroundImage = ''; // Убираем фон при уходе с карточки
+        });
+
+        galleryList.appendChild(card);
+    });
+};

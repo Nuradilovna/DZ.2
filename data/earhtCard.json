@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Буми",
+    "photo": "https://i.pinimg.com/736x/36/08/21/360821b932a42a7072b92ccd4fd56e1a.jpg",
+    "backgroundPhoto": "https://i.pinimg.com/736x/15/e5/74/15e57475d7e349e8fd463d09e5145250.jpg",
+    "element": "чудаковатый пожилой царь Омашу с дикими глазами.",
+    "age": 112
+  },
+  {
+    "name": "Тоф",
+    "photo": "https://i.pinimg.com/736x/7c/82/98/7c8298dfc2bcb8b9b7a0960a565af314.jpg",
+    "backgroundPhoto": "https://i.pinimg.com/736x/bf/4a/e9/bf4ae9bde5c289ffed52076318309d2d.jpg",
+    "element": " единственный ребёнок в семье Лао и Поппи Бейфонг.",
+    "age": 12
+  },{
+    "name": "мастер ю",
+    "photo": "https://i.pinimg.com/736x/e5/84/75/e58475f54b7ed0963aaaa0c09a9aec4b.jpg",
+    "backgroundPhoto": "https://i.pinimg.com/736x/d5/d0/5e/d5d05eb9e0c8faee9d19a3fe4cddf828.jpg",
+    "element": "учитель магии земли, проживающий в городе Гаолинь.",
+    "age": "взрослый"
+  },{
+    "name": "ксин фу",
+    "photo": "https://i.pinimg.com/736x/78/21/9d/78219d1d63064284f3e86c8ea9736220.jpg",
+    "backgroundPhoto": "https://i.pinimg.com/736x/15/e5/74/15e57475d7e349e8fd463d09e5145250.jpg",
+    "element": "распорядитель и судья Турнира магов земли, проводимого в городе Гаолинь, царство Земли.",
+    "age": "взрослый"
+  },{
+    "name": "лао бейфонг",
+    "photo": "https://i.pinimg.com/736x/26/9c/ab/269cab03d95b5d43df3f646221925a8d.jpg",
+    "backgroundPhoto": "https://i.pinimg.com/736x/13/cf/29/13cf29ff0dbd6e6c208e10ce369c7966.jpg",
+    "element": " отец Тоф и один из богатейших людей в царстве Земли. ",
+    "age": "взрослый"
+  },{
+    "name": "киоши",
+    "photo": "https://i.pinimg.com/736x/d3/ea/e6/d3eae600e7fd7a0bed3b23a424c304d0.jpg",
+    "backgroundPhoto": "https://i.pinimg.com/736x/41/85/ff/4185ffb16b63b5c07c61d3165f668679.jpg",
+    "element": " одна из предшествовавших Аангу и Корре Аватаров.",
+    "age": 230
+  },{
+    "name": "дай ли",
+    "photo": "https://i.pinimg.com/736x/b9/5a/02/b95a023c8765534e629e86c0ec51ba83.jpg",
+    "backgroundPhoto": "https://i.pinimg.com/736x/bd/e8/83/bde883117316e9db75218118bdca0a7f.jpg",
+    "element": "тайная полиция Ба Синг Се, членами которой являются мастера магии земли.",
+    "age": "не известно"
+  },{
+    "name": "Маги песка",
+    "photo": "https://i.pinimg.com/736x/1e/9c/3f/1e9c3fe81d7cc86cc380e1daaaad9efc.jpg",
+    "backgroundPhoto": "https://i.pinimg.com/736x/2a/87/fa/2a87facebcd03db87bfc125c460de4ca.jpg",
+    "element": "это племя магов земли, которые живут в пустыне Ши Вонг и специализируются на управлении песком.",
+    "age": "не известно"
+  },{
+    "name": "Болотное Племя Воды ",
+    "photo": "https://i.pinimg.com/736x/00/82/91/00829137f8f65eb2f0ff631e82bdf270.jpg",
+    "backgroundPhoto": "https://i.pinimg.com/736x/71/42/f9/7142f973527a4cb3bcf73b3d351fc5ce.jpg",
+    "element": "одно из трёх Племён Воды. Примечательно, что они живут не на одном из полюсов, а на территории царства Земли, в месте под названием Туманное болото.",
+    "age": "не известно"
+  }
+
+]

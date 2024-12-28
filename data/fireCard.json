@@ -1,0 +1,43 @@
+[
+  {
+    "name": "Айро",
+    "photo": "https://i.pinimg.com/736x/62/07/f9/6207f9e91b8a36c42b4cf02bd6f34302.jpg",
+    "backgroundPhoto": "https://i.pinimg.com/736x/55/91/d8/5591d8ee2b3392444b3c87bc7224f9e6.jpg",
+    "age":"не известно"
+  },{
+    "name": "Зуко",
+    "photo": "https://i.pinimg.com/736x/c1/67/cc/c167ccc0bebc68b93a730c9856d4cee4.jpg",
+    "backgroundPhoto": "https://i.pinimg.com/736x/b7/f6/30/b7f630e7bbf25f60dd4481856821c90e.jpg",
+    "age": 16
+  },{
+    "name": "Азула",
+    "photo": "https://i.pinimg.com/736x/b4/db/14/b4db14534778619cd639ccdfb14deedb.jpg",
+    "backgroundPhoto": "https://i.pinimg.com/736x/b4/02/29/b402294f2d8b0710681cc270f0de46f8.jpg",
+    "age":14
+  },{
+    "name": "Озай",
+    "photo": "https://i.pinimg.com/736x/cc/d0/cd/ccd0cdb5ec84617dc464654d9db3a404.jpg",
+    "backgroundPhoto": "https://i.pinimg.com/736x/db/74/5f/db745f3e558b42eabbc4fdb3f46c30eb.jpg",
+    "age":47
+  },{
+    "name": "Воины солнца",
+    "photo": "https://i.pinimg.com/736x/44/3e/cf/443ecfb035408c2ae6397b2716607394.jpg",
+    "backgroundPhoto": "https://i.pinimg.com/736x/16/33/36/163336448701221e915baeef2ec55bec.jpg",
+    "age":"не известно"
+  },{
+    "name": "Драконы",
+    "photo": "https://i.pinimg.com/736x/4e/8f/da/4e8fda77b145b3df103411c5ca373e3a.jpg",
+    "backgroundPhoto": "https://i.pinimg.com/736x/7b/70/27/7b70276b5369b2b96187ff08ebb2d0f4.jpg",
+    "age":"не известно"
+  },{
+    "name": "Року",
+    "photo": "https://i.pinimg.com/736x/dc/dc/c0/dcdcc046a0c94fd386817e6747f8ec84.jpg",
+    "backgroundPhoto": "https://i.pinimg.com/736x/31/1d/8b/311d8b4b91c5a8a05ae8e9ae930857cc.jpg",
+    "age":70
+  },{
+    "name": "Джонг",
+    "photo": "https://i.pinimg.com/736x/97/5e/18/975e18572fa5c8547637319d4b3c3745.jpg",
+    "backgroundPhoto": "https://i.pinimg.com/736x/a7/d0/ea/a7d0ea842eaa221f9e90cab4632fa564.jpg",
+    "age" : 60
+  }
+]
